@@ -1,0 +1,7 @@
+ARG_ENABLE('ext_skeleton_name', 'ext_skeleton_name support', 'no');
+
+if (PHP_EXT_SKELETON_NAME != 'no') {
+	AC_DEFINE('HAVE_EXT_SKELETON_NAME', 1, 'ext_skeleton_name support enabled');
+
+	EXTENSION('ext_skeleton_name', 'ext_skeleton_name.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}

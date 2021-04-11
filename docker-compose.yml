@@ -1,0 +1,10 @@
+version: '3'
+services:
+  php-ext-dev:
+    build: .
+    volumes:
+      - .:/usr/src/ext-dev
+      - ./etc/ext_skeleton_name.ini:/usr/local/etc/php/conf.d/ext_skeleton_name.ini
+    container_name: php-ext-dev
+    restart: "no"
+    command: /bin/sh -c "trap exit INT TERM; echo 'sleeping...'; sleep infinity & wait"
